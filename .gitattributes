@@ -1,2 +1,133 @@
 # Auto detect text files and perform LF normalization
-* text=auto
+* <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Card</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe4e1;
+            font-family: 'Arial', sans-serif;
+        }
+        .card {
+            width: 350px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+            border: 5px solid orange;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            padding-top: 70px; /* Give space for the ribbon */
+            overflow: hidden; /* Prevent the letter from overflowing outside the card */
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .ribbon {
+            width: 100%;
+            height: 40px;
+            background: #ff69b4;
+            position: absolute;
+            top: 10px;
+            left: 0;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            line-height: 40px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            z-index: 10; /* Ensure ribbon stays on top */
+        }
+        .content {
+            margin-top: 20px;
+            color: green;
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .heart {
+            font-size: 24px;
+            color: red;
+        }
+        .sketches {
+            margin-top: 20px;
+        }
+        .sketches img {
+            width: 50px;
+            margin: 5px;
+        }
+        .envelope {
+            width: 150px;
+            height: 100px;
+            background: orange;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            margin-top: 40px; /* Space between the ribbon and envelope */
+            transition: transform 1s ease-in-out;
+        }
+        .envelope::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            width: 0;
+            height: 0;
+            border-left: 75px solid transparent;
+            border-right: 75px solid transparent;
+            border-bottom: 50px solid orange;
+        }
+        .letter {
+            width: 120px;
+            height: 80px;
+            background: white;
+            position: absolute;
+            bottom: -80px; /* Start the letter below the envelope */
+            left: 50%;
+            transform: translateX(-50%);
+            transition: transform 1s ease-in-out;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .open .letter {
+            transform: translateY(-100px); /* Move letter up when opened */
+        }
+        .open .content {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" onclick="openLetter()">
+        <div class="ribbon">For Someone Special</div>
+        <div class="envelope">
+            <div class="letter"></div>
+        </div>
+        <div class="content">
+            <p class="message">Dear BUBUSKI, happy second Valentine's Day to the best boyfriend in the whole world. It doesn’t matter in good or in bad times, remember that I will always be there for you and I love you more than anything in this whole world, my blessing. Thank you for being mine. ❤️</p>
+            <p class="heart">❤️</p>
+            <div class="sketches">
+                <img src="https://img.icons8.com/emoji/96/heart-with-ribbon.png" alt="Heart with ribbon">
+                <img src="https://img.icons8.com/emoji/96/wrapped-gift.png" alt="Present">
+                <img src="https://img.icons8.com/emoji/96/green-heart.png" alt="Green heart">
+                <img src="https://img.icons8.com/emoji/96/orange-heart.png" alt="Orange heart">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openLetter() {
+            document.querySelector('.card').classList.toggle('open');
+        }
+    </script>
+</body>
+</html>text=auto
